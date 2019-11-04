@@ -1,0 +1,74 @@
+.login{
+    align-content: center;
+    border: 2px solid red;
+    width: 450px;
+    height: 300px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.login_windows{
+    align-content: center;
+    text-align: center;
+    color: green;
+    position: relative;
+}
+
+.id_pass{
+    text-align: left;
+    color: blue;
+    margin: 50px 30px;
+    position: relative 
+}
+
+#header{
+    color: #000000;
+}
+
+.page{
+    background-color: #333;
+    color: #FFFFFF;
+}
+.menu{
+    min-height: 1000px;
+    background-color: #FFFFFF;
+}
+
+.idblock{
+    color: rgb(1, 235, 52);
+    border: 1px solid #FFFFFF;
+}
+
+.menubutton{
+    width: 100%;
+    margin: auto;
+}
+
+.contentbox{
+    min-height: 500px;
+}
+
+.headbc{
+    background-color: #F6D9F8;
+}
+
+#loginpanel{
+    background-color: #333;
+    height: 50px;
+    color: #ffffff;
+}
+
+#blankp{
+    background-color: rgb(224, 230, 226);
+}
+
+#headertop{
+    background-color:  rgb(71, 194, 133);
+    text-align: center;
+    border: 10px solid #F76D6D;
+    font: sans-serif;
+}
+
+#headerbot{
+    background-color: #FFFFFF;
+}
