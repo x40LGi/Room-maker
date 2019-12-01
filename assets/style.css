@@ -2,6 +2,10 @@ body{
     font-family: 'Kanit', sans-serif;
 }
 
+h1 {
+    text-align: center;
+}
+
 .inner_left_bar{
     margin: 5px;
 }
@@ -38,7 +42,7 @@ body{
     color: #FFFFFF;
 }
 .menu{
-    min-height: 1000px;
+    min-height: 800px;
     background-color: #FFFFFF;
 }
 
@@ -49,19 +53,24 @@ body{
 
 .menubutton{
     width: 100%;
-    margin: auto;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .contentbox{
-    min-height: 500px;
+    min-height: 300px;
 }
 
-.headbc{
+.bc{
     background-color: #F6D9F8;
 }
 
 .idblock{
     text-align: center;
+}
+
+.datashow{
+    border:#000000;
 }
 
 #loginpanel{
@@ -82,7 +91,7 @@ body{
 }
 
 #headerbot{
-    background-color: #FFFFFF;
+    color: #000000;
 }
 
 th{

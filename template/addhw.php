@@ -31,7 +31,10 @@
                     <div class="col">
                         <div class="row align-items-center" id="loginpanel">
                             <div class="col">
-                                Your id is : 62070077
+                                Your id is : <?php 
+                                require "./getdata.php";
+                                echo $record[0];
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -45,17 +48,21 @@
         <div class="col-2 page">
             <h2>Welcome</h2>
             <div class="idblock inner_left_bar">
-                นาย ธนกานต์ บุญมา
+            <?php
+                echo $record[1]." ".$record[2];
+            ?>
             </div>
             <hr>
-            <a href="main.htm" class="inner_left_bar"><button type="button" class="btn btn-secondary menubutton">Home</button></a>
+            <a href="\template\main.php" class="inner_left_bar"><button type="button" class="btn btn-secondary menubutton">Home</button></a>
             <hr>
-            <a href="member.htm" class="inner_left_bar"><button type="button"
+            <a href="\template\member.php" class="inner_left_bar"><button type="button"
                     class="btn btn-secondary menubutton">สมาชิกในห้องของคุณ</button></a>
             <hr>
-            <a href="tarang.htm" class="inner_left_bar"><button type="button" class="btn btn-secondary menubutton">ตารางสอนของคุณ</button></a>
+            <a href="\template\tarang.php" class="inner_left_bar"><button type="button" class="btn btn-secondary menubutton">ตารางสอนของคุณ</button></a>
             <hr>
-            <a href="score.htm" class="inner_left_bar"><button type="button" class="btn btn-secondary menubutton">คะเเนน</button></a>
+            <a href="\template\score.php" class="inner_left_bar"><button type="button" class="btn btn-secondary menubutton">คะเเนน</button></a>
+            <hr>
+            <a href="\template\addhw.php" class="inner_left_bar"><button type="button" class="btn btn-secondary menubutton">เพิ่มการบ้าน</button></a>
             <hr>
             <button type="button" class="btn btn-secondary menubutton">ค้นหา</button>
             <hr>
@@ -63,10 +70,8 @@
         </div>
         <div class="col" id="blankp">
             <div class="container contentbox" id="headertop">
-                <h1>Hello</h1>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi libero quisquam voluptates optio
-                    natus nihil architecto. Ipsum optio suscipit, voluptas reprehenderit vero reiciendis beatae
-                    praesentium sit recusandae, quae repudiandae nesciunt!</h3>
+                <h1>ยินดีด้วย!</h1>
+                <h3>คุณยังไม่มีการบ้านตอนนี้</h3>
             </div>
             <div class="container contentbox" id="headerbot">
                 <h1>Welcome to Classroom management</h1>
