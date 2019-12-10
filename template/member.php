@@ -58,12 +58,8 @@
             <a href="\template\member.php" class="inner_left_bar btn btn-secondary menubutton">สมาชิกในห้องของคุณ</a>
             <hr>
             <a href="\template\tarang.php" class="inner_left_bar btn btn-secondary menubutton">ตารางสอนของคุณ</a>
-            <hr>
-            <a href="\template\score.php" class="inner_left_bar btn btn-secondary menubutton">คะเเนน</a>
             <hr>    
             <button type="button" class="inner_left_bar btn btn-secondary menubutton" data-toggle="modal" data-target="#exampleModalCenter">เพิ่มข้อมูล</button>
-            <hr>
-            <button type="button" class="btn btn-secondary menubutton">ค้นหา</button>
             <hr>
             <button type="button" class="btn btn-secondary menubutton">ติดต่ออาจารย์</button>  
         </div>
@@ -72,10 +68,10 @@
             <h1>สมาชิกในห้อง</h1>
             <table class="table">
                     <thead>
-                        <th  scope="col"> รหัสนักเรียน</th>
-                        <th  scope="col"> ชื่อ</th>
-                        <th  scope="col"> นามสกุล</th>
-                        <th  scope="col"> เบอร์โทรศัพท์</th>
+                        <th  scope="col" class="headtable"> รหัสนักเรียน</th>
+                        <th  scope="col" class="headtable"> ชื่อ</th>
+                        <th  scope="col" class="headtable"> นามสกุล</th>
+                        <th  scope="col" class="headtable"> เบอร์โทรศัพท์</th>
                     </thead>
                     <?php
                     require "./getdata.php";

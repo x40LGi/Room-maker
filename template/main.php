@@ -58,19 +58,63 @@
             <a href="\template\member.php" class="inner_left_bar btn btn-secondary menubutton">สมาชิกในห้องของคุณ</a>
             <hr>
             <a href="\template\tarang.php" class="inner_left_bar btn btn-secondary menubutton">ตารางสอนของคุณ</a>
-            <hr>
-            <a href="\template\score.php" class="inner_left_bar btn btn-secondary menubutton">คะเเนน</a>
             <hr>    
             <button type="button" class="inner_left_bar btn btn-secondary menubutton" data-toggle="modal" data-target="#exampleModalCenter">เพิ่มข้อมูล</button>
             <hr>
-            <button type="button" class="btn btn-secondary menubutton">ค้นหา</button>
-            <hr>
             <button type="button" class="btn btn-secondary menubutton">ติดต่ออาจารย์</button>
         </div>
+
+
         <div class="col" id="blankp">
             <div class="container contentbox" id="headertop">
-                <h1>ยินดีด้วย!</h1>
-                <h3>คุณยังไม่มีการบ้านตอนนี้</h3>
+                <div class="col">    
+                    <table class="table">
+                        <tbody>
+                            <th scope="col space">
+                                <div class="hwbox">
+                                <?php
+                                if($result){
+                                    // เปิดคำสั่ง php เพื่อเชื่อมต่อฐานข้อมูลของการบ้านเเละจะนำมาเเสดงบนหน้าเว็บ
+                                    $con= mysqli_connect("localhost","root","","homework") or die("Error: " . mysqli_error($con));
+                                    $sql ="select * from hwadd";
+                                    mysqli_query($con, "SET NAMES 'utf8' ");
+                                    $result=mysqli_query($con, $sql);
+                                    $lshomework= mysqli_fetch_array($result, MYSQLI_NUM);
+                                    while ($lshomework= mysqli_fetch_array($result, MYSQLI_NUM)){
+                                        echo "
+                                        <div class='row hwbox'>
+                                            <div class='col infor'>
+                                                <h1>วิชา $lshomework[1]</h1>
+                                            </div>
+                                            <div class='col infor'>
+                                                <h5>
+                                                    <ul>
+                                                        <li>อาจารย์ : $record[1]</li>
+                                                        <li>ประเภท : $lshomework[2]</li>
+                                                        <li>คะเเนน : $lshomework[3]</li>
+                                                    </ul>
+                                                </h5>
+                                            </div>
+                                            <div class='col infor'>
+                                                <h5>
+                                                    <ul>
+                                                        <li>คำอธิบาย : $lshomework[4]</li>
+                                                        <li>กำหนดส่ง : 12 ธันวาคม 2019</li>
+                                                        <li>อ้างอิง : <a href='$lshomework[5]'>$lshomework[5]</a></li>
+                                                    <ul>
+                                                </h5>
+                                            </div>
+                                        </div>";
+                                    }
+                                }else{
+                                    echo "ERROR!";
+                                }
+                                ?>  
+                                </div>
+                            </th>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="container contentbox bc" id="headerbot">
                 <h1>Welcome to Classroom management</h1>
@@ -90,30 +134,27 @@
         </button>
       </div>
       <div class="modal-body">
+      <form action="adddata.php" method="post" action="main.php">
         ชื่อวิชา <br>
-        <input class="form-control" type="text" placeholder="วิชา">
-        <label class="mr-sm-2" for="inlineFormCustomSelect">ประเภท</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Choose...</option>
-        <option value="1">ใบความรู้</option>
-        <option value="2">การบ้าน</option>
-      </select>
+        <input class="form-control" type="text" placeholder="วิชา" name="subname">
+        ประเภท <br>
+        <input class="form-control" type="text" placeholder="งานกลุ่ม, ใบงาน, การบ้าน, ใบความรู้" name="type">
         คะเเนน <br>
-        <input class="form-control" type="text" placeholder="คะเเนน">
+        <input class="form-control" type="text" placeholder="คะเเนน" name="score">
         คำอธิบาย <br>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
         <div class="form-group">
-        <label for="exampleFormControlFile1">ไฟล์งาน</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
+        <label for="exampleFormControlFile1" name="file">ลิ้งค์เพิ่มเติม</label>
+        <input class="form-control" type="text" placeholder="ลิ้งค์ไฟล์ หรือ เเหล่งอ้างอิงอื่นๆ" name="reference">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-        <button type="button" class="btn btn-primary">เพิ่มการบ้าน</button>
+        <button type="submit" class="btn btn-primary">เพิ่มการบ้าน</button>
       </div>
+      </form>
     </div>
   </div>
-</div>
     <!--Javascript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

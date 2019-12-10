@@ -97,3 +97,28 @@ h1 {
 th{
     padding: 10px;
 }
+
+.headtable{
+    color: #2600ff;
+    font-size: large;
+}
+
+.hwbox{
+    background-color: #333;
+    width: auto;
+    height: auto;
+    color: aqua;
+    text-align: left;
+    border: 2px solid magenta;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.infor{
+    margin: auto;
+    padding: 10px;
+}
+
+.space{
+    margin: 10px;
+}

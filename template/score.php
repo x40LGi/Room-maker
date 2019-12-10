@@ -84,9 +84,9 @@
                 </div>
                 <table class="table">
                     <thead>
-                        <th  scope="col"> รหัสวิชา</th>
-                        <th  scope="col"> ชื่อวิชา</th>
-                        <th  scope="col"> ครูผู้สอน</th>
+                        <th  scope="col" class="headtable"> รหัสวิชา</th>
+                        <th  scope="col" class="headtable"> ชื่อวิชา</th>
+                        <th  scope="col" class="headtable"> ครูผู้สอน</th>
                     </thead>
                     <?php
                     if($result){
@@ -121,8 +121,9 @@
         </button>
       </div>
       <div class="modal-body">
+      <form action="main.php" method="post">
         ชื่อวิชา <br>
-        <input class="form-control" type="text" placeholder="วิชา">
+        <input class="form-control" type="text" placeholder="วิชา" name="subname">
         <label class="mr-sm-2" for="inlineFormCustomSelect">ประเภท</label>
         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
         <option selected>Choose...</option>
@@ -136,7 +137,8 @@
         <div class="form-group">
         <label for="exampleFormControlFile1">ไฟล์งาน</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
+        </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
